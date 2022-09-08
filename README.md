@@ -61,8 +61,26 @@ This notes are adapted from these sources:
 1. Memory consumption and garbage collection are among the major reasons
 why Ruby is slow.
 2. Ruby has significant memory overhead
-
 See [001_gc.rb](001_gc.rb).
+
+
+## Performance Mind-set
+
+1. Ruby is a general-purpose programming language, but that doesn’t mean
+you should use it to solve all your problems. There are things that Ruby
+is not so good at. The prime example is large dataset processing. That
+needs memory: exactly the sort of thing that you want to avoid.
+This task is better done in a database or in background processes written
+in other programming languages. Twitter, for example, once had a Ruby
+on Rails front end backed by Scala workers. Another example is statistical
+computations, which are better done with, say, the R language.
+2. The less memory your code uses, the less work Ruby GC has to do. You
+already know some tricks to reduce memory consumption—the ones that
+we used in our example: line-by-line data processing and avoiding inter-
+mediate objects. I’ll show you more in subsequent chapters.
+3- Once you’re sure the memory is used optimally, take a look at the algo-
+rithmic complexity of the code itself.
+
 
 ## Optimize memory
 
