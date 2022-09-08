@@ -1,7 +1,7 @@
-require 'wrapper'
 require 'csv'
+require "benchmark"
 
-measure do
+puts Benchmark.measure {
   data = CSV.open('003_10mb.csv')
   output = data.readlines.map do |line|
     line.map do |col|
@@ -12,5 +12,5 @@ measure do
   File.open('003_10mb_output.csv', 'w+') do |file|
     file.write output.join('\n')
   end
-end
+}
 
