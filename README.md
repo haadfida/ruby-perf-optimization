@@ -58,10 +58,9 @@ This notes are adapted from these sources:
 
 ## What makes Ruby so slow
 
-1. GC often makes Ruby slow (especially for Ruby `<= 2.0`). And that is because of high memory consumption & allocation
+1. Memory consumption and garbage collection are among the major reasons
+why Ruby is slow.
 2. Ruby has significant memory overhead
-3. GC in Ruby `>= 2.1` is 5 times faster than in previous versions
-4. Raw performance of Ruby `1.9 - 2.3` is about the same
 
 See [001_gc.rb](001_gc.rb).
 
